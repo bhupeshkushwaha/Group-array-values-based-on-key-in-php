@@ -1,0 +1,50 @@
+    <?php
+
+    $list= [
+        [   
+            'No' => 101,
+            'Paper_id' => 'WE3P-1',
+            'Title' => "a1",
+            'Author' => 'ABC',
+            'Aff_list' => "University of South Florida, Tampa, United States",
+            'Abstracts' => "SLA"
+        ] ,
+        [   
+            'No' => 101,
+            'Paper_id' => 'WE3P-1',
+            'Title' => "a2",
+            'Author' => 'DEF',
+            'Aff_list' => "University of South Florida, Tampa, United States",
+            'Abstracts' => "SLA"
+        ] ,
+        [    
+            'No' => 104, 
+            'Paper_id' => 'TUSA-3',
+            'Title' => "a3",
+            'Author' => 'GH1',
+            'Aff_list' => "University of Alcala, Alcala de Henares, Spain",
+            'Abstracts' => "Microwave"
+        ] 
+    ];
+
+
+    $firstArr = array();
+    foreach ($list as $items) 
+    {
+        $firstArr[$items['No']][] = $items;
+    }
+
+
+    $secondArr = array();
+    foreach ($firstArr as $name => $items) 
+    {
+        $secondArr['list'][] = array(
+            'no' => ucfirst(strtolower($name)),
+            'items' => $items
+        );
+    }
+    echo "<pre>";
+    print_r($secondArr);
+    echo "</pre>";
+
+    ?>
